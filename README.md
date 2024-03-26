@@ -19,4 +19,5 @@ Further description in the forum at https://www.vest-sport.de/forum/viewtopic.ph
 Durch diesen Hack für den LMO ist eine bessere Ansicht im Backend für Volleyballligen möglich.
 
 Du hast 4 Möglichkeiten Deine Volleyball Liga für die Besucher Deines LMO's darzustellen.
+
 Nähere Beschreibung im Forum unter https://www.vest-sport.de/forum/viewtopic.php?p=815#p815. Momentan nur in deutsch
