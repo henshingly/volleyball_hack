@@ -7,7 +7,7 @@
 
 This hack for the LMO enables a better view in the backend for volleyball leagues.
 
-You have 4 options to present your volleyball league to visitors to your LMO.
+You have 4 options to present your volleyball league to visitors of your LMO.
 
 Further description in the forum at https://www.vest-sport.de/forum/viewtopic.php?p=815#p815. Currently only in German
 
