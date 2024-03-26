@@ -1,5 +1,3 @@
-[![LMO für PHP 8](https://github.com/henshingly/volleyball_hack/blob/master/lmo/help/media/logo.svg)](https://www.vest-sport.de/forum)
-
 [![GitHub release](https://img.shields.io/github/release/henshingly/volleyball_hack?include_prereleases=&sort=semver&color=blue)](https://github.com/henshingly/volleyball_hack/releases/)
 [![download-badge](https://img.shields.io/github/downloads/henshingly/volleyball_hack/total.svg?style=flat-square "Download status")](https://github.com/henshingly/volleyball_hack/releases/latest "Download status")
 [![Donate](https://img.shields.io/badge/-Buy%20me%20a%20coffee-brown.svg)](https://paypal.me/LMOforum)
