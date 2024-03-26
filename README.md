@@ -1,4 +1,4 @@
-[<img src="https://www.vest-sport.de/forum_files/hack_volleyball.svg">](https://www.vest-sport.de/forum/viewtopic.php?p=815#p815)
+[<img src="https://www.vest-sport.de/forum_files/hack-volleyball.svg">](https://www.vest-sport.de/forum/viewtopic.php?p=815#p815)
 
 [![GitHub release](https://img.shields.io/github/release/henshingly/volleyball_hack?include_prereleases=&sort=semver&color=blue)](https://github.com/henshingly/volleyball_hack/releases/)
 [![download-badge](https://img.shields.io/github/downloads/henshingly/volleyball_hack/total.svg?style=flat-square "Download status")](https://github.com/henshingly/volleyball_hack/releases/latest "Download status")
