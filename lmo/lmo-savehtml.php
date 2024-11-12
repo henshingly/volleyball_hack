@@ -19,8 +19,10 @@
   */
 
 
-if(!isset($namepkt)) {$namepkt="";}
-if(!isset($nametor)) {$nametor="";}
+$trans_lang = array( 'Monday' => $text['date'][0], 'Tuesday' => $text['date'][1], 'Wednesday' => $text['date'][2], 'Thursday' => $text['date'][3], 'Friday' => $text['date'][4], 'Saturday' => $text['date'][5], 'Sunday' => $text['date'][6], 'Mon' => $text['date'][7], 'Tue' => $text['date'][8], 'Wed' => $text['date'][9], 'Thu' => $text['date'][10], 'Fri' => $text['date'][11], 'Sat' => $text['date'][12], 'Sun' => $text['date'][13], 'January' => $text['date'][14], 'February' => $text['date'][15], 'March' => $text['date'][16], 'April' => $text['date'][17], 'May' => $text['date'][18], 'June' => $text['date'][19], 'July' => $text['date'][20], 'August' => $text['date'][21], 'September' => $text['date'][22], 'October' => $text['date'][23], 'November' => $text['date'][24], 'December' => $text['date'][25], 'Jan' => $text['date'][26], 'Feb' => $text['date'][27], 'Mar' => $text['date'][28], 'Apr' => $text['date'][29], 'May' => $text['date'][30], 'Jun' => $text['date'][31], 'Jul' => $text['date'][32], 'Aug' => $text['date'][33], 'Sep' => $text['date'][34], 'Oct' => $text['date'][35], 'Nov' => $text['date'][36], 'Dec' => $text['date'][37] );
+
+if (!isset($namepkt)) {$namepkt="";}
+if (!isset($nametor)) {$nametor="";}
 
 if ($st > 0) {
   $actual = $st;
@@ -29,14 +31,14 @@ if ($st > 0) {
 }
 
 if ($lmtype == 0) {
-  for($i1 = 0; $i1 < $anzsp; $i1++) {
+  for ($i1 = 0; $i1 < $anzsp; $i1++) {
     if ($goala[$actual - 1][$i1] == "-1") $goala[$actual - 1][$i1] = "_";
     if ($goalb[$actual - 1][$i1] == "-1") $goalb[$actual - 1][$i1] = "_";
   }
   $endtab = $actual;
   include(PATH_TO_LMO . "/lmo-calctable.php");
 
-  for($i1 = 0; $i1 < $anzsp; $i1++) {
+  for ($i1 = 0; $i1 < $anzsp; $i1++) {
     if ($goala[$actual - 1][$i1] == "_") $goala[$actual - 1][$i1] = "-1";
     if ($goalb[$actual - 1][$i1] == "_") $goalb[$actual - 1][$i1] = "-1";
   }
@@ -69,7 +71,7 @@ if ($lmtype == 0 && $st > 0) {
   </style>
 </head>
 <body>
-  <script type="text/javascript">document.write('<small><a href="#" onClick="history.back();return false;"><?php echo $text[562]?><\/a><\/small>');</script>
+  <script type="text/javascript">document.write('<small><a href="#" onClick="history.back();return FALSE;"><?php echo $text[562]?><\/a><\/small>');</script>
 
   <h1><?php echo $titel?></h1><?php
     $z = array_filter($teama[$st - 1], "filterZero");
@@ -148,7 +150,11 @@ if ($lmtype == 0 && $st > 0) {
 
     for ($i1 = 0; $i1 < $anzteams; $i1++) {
       $platz = $i1 + 1;
-      $i4 = getTeamNumber($table1[$i1]);
+      if (isLeagueVB() == TRUE) { //Volleyball
+        $i4 = getTeamNumber($table1[$i1]); //Volleyball
+      } else {
+        $i4 = (int)substr($table1[$i1], 35, 7);
+      }
       $teamname = $teams[$i4];
       $pluspunkte = applyFactor($punkte[$i4], $pointsfaktor);
       $minuspunkte = applyFactor($negativ[$i4], $pointsfaktor);
@@ -242,7 +248,7 @@ if ($lmtype == 0 && $st > 0) {
         }
       }//if empty
     }?>
-  </center>  <script type="text/javascript">document.write('<small><a href="#" onClick="history.back();return false;"><?php echo $text[562]?><\/a><\/small>');</script>
+  </center>  <script type="text/javascript">document.write('<small><a href="#" onClick="history.back();return FALSE;"><?php echo $text[562]?><\/a><\/small>');</script>
 </body>
 </html><?php
     fwrite($wmlfile, ob_get_contents());

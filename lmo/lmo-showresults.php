@@ -15,23 +15,20 @@
   *
   * REMOVING OR CHANGING THE COPYRIGHT NOTICES IS NOT ALLOWED!
   *
-  * $Id$
+  *
   */
 
-if (isLeagueVB() == true) { //Volleyball
-  $breite=$breite+1;
-}
-  ?>
+?>
 <table class="lmoInner" cellspacing="0" cellpadding="0" border="0">
   <tr>
     <th colspan="<?php echo $breite; ?>" align="left">
-    	<?php
+<?php
 echo $st.". ".$text[2];
-if($dats==1) {
-  if($datum1[$st-1]!="") {
+if ($dats==1) {
+  if ($datum1[$st-1]!="") {
     echo " ".$text[3]." ".$datum1[$st-1];
   }
-  if($datum2[$st-1]!="") {
+  if ($datum2[$st-1]!="") {
     echo " ".$text[4]." ".$datum2[$st-1];
   }
 }?>
@@ -39,7 +36,7 @@ if($dats==1) {
   </tr><?php
 // Wenn Spieltermine angegeben und Sortierung eingeschaltet, dann nach Datum sortieren
 $datsort = $mterm[$st-1];
-if($enablegamesort == '1' && filterZero($mterm[$st-1])) {
+if ($enablegamesort == '1' && filterZero($mterm[$st-1])) {
   $datsort = $mterm[$st-1];
   asort($datsort);
   reset($datsort);
@@ -109,7 +106,7 @@ foreach($datsort as $key => $val) {
     <td align="right"><?php echo applyFactor($goala[$st-1][$i],$goalfaktor); ?></td>
     <td align="center" width="8">:</td>
     <td align="left"><?php echo applyFactor($goalb[$st-1][$i],$goalfaktor); ?></td><?php
-    if($spez==1) {?>
+    if ($spez==1) {?>
     <td width="2">&nbsp;</td>
     <td><?php echo $mspez[$st-1][$i]; ?></td><?php
     }
@@ -119,35 +116,34 @@ foreach($datsort as $key => $val) {
     <td align="center" width="8">:</td>
     <td align="left"><?php echo applyFactor($goala[$st-1][$i],$goalfaktor); ?></td><?php
     }
-    if (isLeagueVB() == true) { //Volleyball
-      $pplus="";
-      $pminus="";
-      $splus="";
-      $sminus="";
-      getPointsFromCommentVB($mnote[$st-1][$i],$pplus,$pminus,$splus,$sminus,$error);
+    if (isLeagueVB() == TRUE) { //Volleyball
+      $pplus = "";
+      $pminus = "";
+      $splus = "";
+      $sminus = "";
+      getPointsFromCommentVB($mnote[$st-1][$i], $pplus, $pminus, $splus, $sminus, $error);
       $vbinfo=getResultStringVB($mnote[$st-1][$i]);
-      if (strlen($vbinfo)>7) { //show ballpoint sums
-        $vbinfo="&nbsp".$pplus.":".$pminus."&nbsp(".$vbinfo.")";
+      if (strlen($vbinfo) > 7) { //show ballpoint sums
+        $vbinfo = "&nbsp" . $pplus . ":" . $pminus . "&nbsp(" . $vbinfo . ")";
       } else {
-        $vbinfo="&nbsp(".$vbinfo.")";
+        $vbinfo = "&nbsp(" . $vbinfo . ")";
       }
-      echo "<td align=\"left\" nowrap=\"nowrap\">".$vbinfo."</td>\n";
-    }
-    ?>
+      echo "<td align=\"left\" nowrap=\"nowrap\">" . $vbinfo . "</td>\n";
+    }?>
     <td width="2">&nbsp;</td>
     <td class="nobr" align="left"><?php
     /** Mannschaftsicons finden
      */
     $lmo_teamaicon="";
     $lmo_teambicon="";
-    if($urlb==1 || $mnote[$st-1][$i]!="" || $msieg[$st-1][$i]>0) {
+    if ($urlb==1 || $mnote[$st-1][$i]!="" || $msieg[$st-1][$i]>0) {
       $lmo_teamaicon=HTML_smallTeamIcon($file,$teams[$teama[$st-1][$i]]," alt=''");
       $lmo_teambicon=HTML_smallTeamIcon($file,$teams[$teamb[$st-1][$i]]," alt=''");
     }
     /** Spielbericht verlinken
      */
-    if($urlb==1) {
-      if($mberi[$st-1][$i]!="") {
+    if ($urlb==1) {
+      if ($mberi[$st-1][$i]!="") {
         $lmo_spielbericht=$lmo_teamaicon."<strong>".$teams[$teama[$st-1][$i]]."</strong> &ndash; ".$lmo_teambicon."<strong>".$teams[$teamb[$st-1][$i]]."</strong><br><br>";
         echo " <a href='".$mberi[$st-1][$i]."'  target='_blank'><img src='".URL_TO_IMGDIR."/lmo-st1.gif' width='10' height='12' border='0' alt=''><span class='popup'>".$lmo_spielbericht.nl2br($text[270])."</span></a>";
       } else {
@@ -183,7 +179,7 @@ foreach($datsort as $key => $val) {
       if ($mnote[$st-1][$i]!="") {
         $lmo_spielnotiz.="\n\n<strong>".$text[22].":</strong>\n".$mnote[$st-1][$i];
       }
-      echo " <a href='#' onclick=\"alert('".addcslashes('',htmlentities(strip_tags($lmo_spielnotiz)))."');window.focus();return false;\"><span class='popup'>".nl2br($lmo_spielnotiz)."</span><img src='".URL_TO_IMGDIR."/lmo-st2.gif' width='10' height='12' border='0' alt=''></a>";
+      echo " <a href='#' onclick=\"alert('".addcslashes('',htmlentities(strip_tags($lmo_spielnotiz)))."');window.focus();return FALSE;\"><span class='popup'>".nl2br($lmo_spielnotiz)."</span><img src='".URL_TO_IMGDIR."/lmo-st2.gif' width='10' height='12' border='0' alt=''></a>";
       $lmo_spielnotiz="";
     } else {
       echo "&nbsp;";

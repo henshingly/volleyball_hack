@@ -15,7 +15,7 @@
   *
   * REMOVING OR CHANGING THE COPYRIGHT NOTICES IS NOT ALLOWED!
   *
-  * $Id$
+  *
   */
 /*
 //Caching
@@ -96,11 +96,11 @@ if (file_exists(PATH_TO_TEMPLATEDIR.'/'.basename($file).".tpl.php")) {
 
 //Titel
 if ($file!="") {
-  $newtitel=$titel;
+  $newtitel = $titel;
   setOptionsVB ($newtitel); //Volleyball
-  $output_titel.=$newtitel;
+  $output_titel .= $newtitel;
 } else {
-  $output_titel.=$action=="tipp"?$text['tipp'][0]:$text[53];
+  $output_titel .= $action=="tipp"?$text['tipp'][0]:$text[53];
 }
 
 

@@ -19,8 +19,8 @@
   */
 
 
-if(!isset($namepkt)) {$namepkt="";}
-if(!isset($nametor)) {$nametor="";}
+if (!isset($namepkt)) {$namepkt="";}
+if (!isset($nametor)) {$nametor="";}
 
 if ($st > 0) {
   $actual = $anzst;
@@ -29,14 +29,14 @@ if ($st > 0) {
 }
 
 if ($lmtype == 0) {
-  for($i1 = 0; $i1 < $anzsp; $i1++) {
+  for ($i1 = 0; $i1 < $anzsp; $i1++) {
     if ($goala[$actual - 1][$i1] == "-1") $goala[$actual - 1][$i1] = "_";
     if ($goalb[$actual - 1][$i1] == "-1") $goalb[$actual - 1][$i1] = "_";
   }
   $endtab = $actual;
   include_once(PATH_TO_LMO . "/lmo-calctable.php");
 
-  for($i1 = 0; $i1 < $anzsp; $i1++) {
+  for ($i1 = 0; $i1 < $anzsp; $i1++) {
     if ($goala[$actual - 1][$i1] == "_") $goala[$actual - 1][$i1] = "-1";
     if ($goalb[$actual - 1][$i1] == "_") $goalb[$actual - 1][$i1] = "-1";
   }
@@ -66,7 +66,7 @@ if ($lmtype == 0) {
   </style>
 </head>
 <body>
-  <script type="text/javascript">document.write('<small><a href="#" onClick="history.back();return false;"><?php echo $text[562]?><\/a><\/small>');</script>
+  <script type="text/javascript">document.write('<small><a href="#" onClick="history.back();return FALSE;"><?php echo $text[562]?><\/a><\/small>');</script>
   <h1><?php echo $titel?></h1>
   <table>
     <tr>
@@ -177,8 +177,11 @@ if ($lmtype == 0) {
 <?php
     for ($i1 = 0; $i1 < $anzteams; $i1++) {
       $platz = $i1 + 1;
-      //$i4 = (int)substr($table1[$i1], 35, 7);
-      $i4 = getTeamNumber($table1[$i1]);
+      if (isLeagueVB() == TRUE) { //Volleyball
+        $i4 = getTeamNumber($table1[$i1]);
+      } else {
+        $i4 = (int)substr($table1[$i1], 35, 7);
+      }
       $teamname = $teams[$i4];
       $pluspunkte = applyFactor($punkte[$i4], $pointsfaktor);
       $minuspunkte = applyFactor($negativ[$i4], $pointsfaktor);
@@ -209,7 +212,7 @@ if ($lmtype == 0) {
     }
 ?>
   </table>
-  <script type="text/javascript">document.write('<small><a href="#" onClick="history.back();return false;"><?php echo $text[562]?><\/a><\/small>');</script>
+  <script type="text/javascript">document.write('<small><a href="#" onClick="history.back();return FALSE;"><?php echo $text[562]?><\/a><\/small>');</script>
 </body>
 </html>
 <?php
