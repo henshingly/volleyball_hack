@@ -40,11 +40,13 @@ if (isset($file) && $file != "") {
     $platz1 = array("");
     $platz1 = array_pad($array, $anzteams+1, "");
     for ($x = 0; $x < $anzteams; $x++) {
-      if (isLeagueVB() == TRUE) { //Volleyball
-        $platz1[getTeamNumber($tab0[$x])] = $x + 1; //Volleyball
+      // Volleyball Patch Start
+      if (isLeagueVB() == TRUE) {
+        $platz1[getTeamNumber($tab0[$x])] = $x + 1;
       } else {
         $platz1[intval(substr($tab0[$x], 34))] = $x + 1;
       }
+      // Volleyball Patch End
     }
     $endtab++;
   }
@@ -55,11 +57,13 @@ if (isset($file) && $file != "") {
     $hplatz = array("");
     $hplatz = array_pad($array, $anzteams+1, "");
     for ($x = 0; $x < $anzteams; $x++) {
-      if (isLeagueVB() == TRUE) { //Volleyball
-        $hplatz[getTeamNumber($tab0[$x])] = $x + 1; //Volleyball
+      // Volleyball Patch Start
+      if (isLeagueVB() == TRUE) {
+        $hplatz[getTeamNumber($tab0[$x])] = $x + 1;
       } else {
         $hplatz[intval(substr($tab0[$x], 34))] = $x + 1;
       }
+      // Volleyball Patch End
     }
     $hspiele = $spiele;
     $hsiege = $siege;

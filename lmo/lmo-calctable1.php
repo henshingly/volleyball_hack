@@ -25,20 +25,20 @@ if (($file!="") && ($subteams!="")) {
   if (!isset($newtabtype)) {
     $newtabtype = 0;
   }
-  $subteam = explode('.', $subteams);
-  $spiele1 = array_pad($array, $anzteams + 1, "0");
-  $siege1 = array_pad($array, $anzteams + 1, "0");
-  $unent1 = array_pad($array, $anzteams + 1, "0");
-  $nieder1 = array_pad($array, $anzteams + 1, "0");
-  $punkte1 = array_pad($array, $anzteams + 1, "0");
-  $negativ1 = array_pad($array, $anzteams + 1, "0");
-  $etore1 = array_pad($array, $anzteams + 1, "0");
-  $atore1 = array_pad($array, $anzteams + 1, "0");
-  $dtore1 = array_pad($array, $anzteams + 1, "0");
-  $mcalc = array_pad($array, 116, "");
+  $subteam = explode('.',$subteams);
+  $spiele1 = array_pad($array,$anzteams+1,"0");
+  $siege1 = array_pad($array,$anzteams+1,"0");
+  $unent1 = array_pad($array,$anzteams+1,"0");
+  $nieder1 = array_pad($array,$anzteams+1,"0");
+  $punkte1 = array_pad($array,$anzteams+1,"0");
+  $negativ1 = array_pad($array,$anzteams+1,"0");
+  $etore1 = array_pad($array,$anzteams+1,"0");
+  $atore1 = array_pad($array,$anzteams+1,"0");
+  $dtore1 = array_pad($array,$anzteams+1,"0");
+  $mcalc = array_pad($array,116,"");
   $hoy=0;
 
-  insertArraysVB($array, $anzteams); //Volleyball
+  insertArraysVB($array, $anzteams); // Volleyball
 
   for ($i=0; $i<116; $i++) {
     $mcalc[$i] = array_pad($array,40,"0");
@@ -85,42 +85,50 @@ if (($file!="") && ($subteams!="")) {
             $atore1[$a]=$atore1[$a]+$goalb[$j][$i];
             if ($msieg[$j][$i]==1) {
               $siege1[$a]=$siege1[$a]+1;
-              if (isLeagueVB() == TRUE) { //Volleyball
+              // Volleyball Patch Start
+              if (isLeagueVB() == TRUE) {
                 calcSetPointsVB(TRUE, TRUE, $mnote[$j][$i], $goala[$j][$i], $goalb[$j][$i], $punkte1, $vb_ppoints, $vb_mpoints, $a, $p0s, $p0u, $p0n, $vb_set30, $vb_set31, $vb_set32, $vb_set23, $vb_set13, $vb_set03);
               } else {
                 $punkte1[$a] = $punkte1[$a]+$p0s;
               }
+              // Volleyball Patch End
               if ($minus==2) {
                 $negativ1[$a]=$negativ1[$a]+$p0n;
               }
             } elseif ($msieg[$j][$i]==2) {
               $nieder1[$a]=$nieder1[$a]+1;
-              if (isLeagueVB() == TRUE) { //Volleyball
+              // Volleyball Patch Start
+              if (isLeagueVB() == TRUE) {
                 calcSetPointsVB(FALSE, TRUE, $mnote[$j][$i], $goala[$j][$i], $goalb[$j][$i], $punkte1, $vb_ppoints, $vb_mpoints, $a, $p0s, $p0u, $p0n, $vb_set30, $vb_set31, $vb_set32, $vb_set23, $vb_set13, $vb_set03);
               } else {
                 $punkte1[$a]=$punkte1[$a]+$p0n;
               }
+              // Volleyball Patch End
               if ($minus==2) {
                 $negativ1[$a]=$negativ1[$a]+$p0s;
               }
             } elseif ($msieg[$j][$i]==0) {
               if ($goala[$j][$i]>$goalb[$j][$i]) {
                 $siege1[$a]=$siege1[$a]+1;
-                if (isLeagueVB() == TRUE) { //Volleyball
+                // Volleyball Patch Start
+                if (isLeagueVB() == TRUE) {
                   calcSetPointsVB(TRUE, TRUE, $mnote[$j][$i], $goala[$j][$i], $goalb[$j][$i], $punkte1, $vb_ppoints, $vb_mpoints, $a, $p0s, $p0u, $p0n, $vb_set30, $vb_set31, $vb_set32, $vb_set23, $vb_set13, $vb_set03);
                 } else {
                   $punkte1[$a]=$punkte1[$a]+$p0s;
                 }
+                // Volleyball Patch End
                 if ($minus==2) {
                   $negativ1[$a]=$negativ1[$a]+$p0n;
                 }
               } elseif ($goala[$j][$i]<$goalb[$j][$i]) {
                 $nieder1[$a]=$nieder1[$a]+1;
-                if (isLeagueVB() == TRUE) { //Volleyball
+                // Volleyball Patch Start
+                if (isLeagueVB() == TRUE) {
                   calcSetPointsVB(FALSE, TRUE, $mnote[$j][$i], $goala[$j][$i], $goalb[$j][$i], $punkte1, $vb_ppoints, $vb_mpoints, $a, $p0s, $p0u, $p0n, $vb_set30, $vb_set31, $vb_set32, $vb_set23, $vb_set13, $vb_set03);
                 } else {
                   $punkte1[$a]=$punkte1[$a]+$p0n;
                 }
+                // Volleyball Patch End
                 if ($minus==2) {
                   $negativ1[$a]=$negativ1[$a]+$p0s;
                 }
@@ -138,42 +146,50 @@ if (($file!="") && ($subteams!="")) {
             $atore1[$a]=$atore1[$a]+$goala[$j][$i];
             if ($msieg[$j][$i]==2) {
               $siege1[$a]=$siege1[$a]+1;
-              if (isLeagueVB() == TRUE) { //Volleyball
+              // Volleyball Patch Start
+              if (isLeagueVB() == TRUE) {
                 calcSetPointsVB(TRUE, FALSE, $mnote[$j][$i], $goala[$j][$i], $goalb[$j][$i], $punkte1, $vb_ppoints, $vb_mpoints, $a, $p0s, $p0u, $p0n, $vb_set30, $vb_set31, $vb_set32, $vb_set23, $vb_set13, $vb_set03);
               } else {
                 $punkte1[$a]=$punkte1[$a]+$p0s;
               }
+              // Volleyball Patch End
               if ($minus==2) {
                 $negativ1[$a]=$negativ1[$a]+$p0n;
               }
             } elseif ($msieg[$j][$i]==1) {
               $nieder1[$a]=$nieder1[$a]+1;
-              if (isLeagueVB() == TRUE) { //Volleyball
+              // Volleyball Patch Start
+              if (isLeagueVB() == TRUE) {
                 calcSetPointsVB(FALSE, FALSE, $mnote[$j][$i], $goala[$j][$i], $goalb[$j][$i], $punkte1, $vb_ppoints, $vb_mpoints, $a, $p0s, $p0u, $p0n, $vb_set30, $vb_set31, $vb_set32, $vb_set23, $vb_set13, $vb_set03);
               } else {
                 $punkte1[$a]=$punkte1[$a]+$p0n;
               }
+              // Volleyball Patch End
               if ($minus==2) {
                 $negativ1[$a]=$negativ1[$a]+$p0s;
               }
             } elseif ($msieg[$j][$i]==0) {
               if ($goala[$j][$i]<$goalb[$j][$i]) {
                 $siege1[$a]=$siege1[$a]+1;
-                if (isLeagueVB() == TRUE) { //Volleyball
+                // Volleyball Patch Start
+                if (isLeagueVB() == TRUE) {
                   calcSetPointsVB(TRUE, FALSE, $mnote[$j][$i], $goala[$j][$i], $goalb[$j][$i], $punkte1, $vb_ppoints, $vb_mpoints, $a, $p0s, $p0u, $p0n, $vb_set30, $vb_set31, $vb_set32, $vb_set23, $vb_set13, $vb_set03);
                 } else {
                   $punkte1[$a]=$punkte1[$a]+$p0s;
                 }
+                // Volleyball Patch End
                 if ($minus==2) {
                   $negativ1[$a]=$negativ1[$a]+$p0n;
                 }
               } elseif ($goala[$j][$i]>$goalb[$j][$i]) {
                 $nieder1[$a]=$nieder1[$a]+1;
-                if (isLeagueVB() == TRUE) { //Volleyball
+                // Volleyball Patch Start
+                if (isLeagueVB() == TRUE) {
                   calcSetPointsVB(FALSE, FALSE, $mnote[$j][$i], $goala[$j][$i], $goalb[$j][$i], $punkte1, $vb_ppoints, $vb_mpoints, $a, $p0s, $p0u, $p0n, $vb_set30, $vb_set31, $vb_set32, $vb_set23, $vb_set13, $vb_set03);
                 } else {
                   $punkte1[$a]=$punkte1[$a]+$p0n;
                 }
+                // Volleyball Patch End
                 if ($minus==2) {
                   $negativ1[$a]=$negativ1[$a]+$p0s;
                 }
@@ -192,7 +208,8 @@ if (($file!="") && ($subteams!="")) {
     $dtore1[$a]=$etore1[$a]-$atore1[$a];
     for ($c=0; $c<count($subteam); $c++) {
       if ($subteam[$c]==$a) {
-        if (($kegel == 0) || (isLeagueVB() == TRUE)) { //Volleyball
+        // Volleyball Patch Start
+        if (($kegel == 0) || (isLeagueVB() == TRUE)) {
           if (isLeagueVB() == TRUE) {
             $vb_pointratio[$a] = calcRatioVB($vb_ppoints[$a], $vb_mpoints[$a]);
             $vb_setratio[$a]   = calcRatioVB($etore1[$a],  $atore1[$a]);
@@ -200,12 +217,13 @@ if (($file!="") && ($subteams!="")) {
           } else {
             array_push($tab1,(50000000+$punkte1[$a]).(50000000-$negativ1[$a]).(50000000+$dtore1[$a]).(50000000+$etore1[$a]).(50000000+$c).(50000000+$a));
           }
+        // Volleyball Patch End
         } else {
           array_push($tab1,(50000000+$punkte1[$a]).(50000000-$negativ1[$a]).(50000000+$etore1[$a]).(50000000+$dtore1[$a]).(50000000+$c).(50000000+$a));
         }
       }
     }
   }
-  sort($tab1,SORT_STRING);
+  sort($tab1, SORT_STRING);
 }
 ?>

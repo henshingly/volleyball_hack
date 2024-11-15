@@ -26,9 +26,11 @@ if ($file != "") {
   if ($spez==1) {
     $breite = $breite+2;
   }
-  if (isLeagueVB() == TRUE) { // Volleyball
+  // Volleyball Patch Start
+  if (isLeagueVB() == TRUE) {
     $breite = $breite+1;
   }
+  // Volleyball Patch End
   if ($datm==1) {
     $breite = $breite+1;
   }
@@ -156,7 +158,8 @@ if ($file != "") {
           <td class="nobr" align="center" width="8">:</td>
           <td class="nobr" align="left"><?php echo applyFactor($goalb[$st-1][$i][$n],$goalfaktor);?></td>
 <?php
-            if (isLeagueVB() == TRUE) { // Volleyball
+            // Volleyball Patch Start
+            if (isLeagueVB() == TRUE) {
               $pplus="";
               $pminus="";
               $splus="";
@@ -170,6 +173,7 @@ if ($file != "") {
               }
               echo "    <td align=\"left\" nowrap=\"nowrap\">".$vbinfo."</td>\n";
             }
+            // Volleyball Patch End
           } else {
             if ($m==2) {
               echo "          <td class=\"lmoTurnierSieger nobr\" align='right'>";
@@ -280,7 +284,8 @@ if ($file != "") {
           <td class="nobr" align="center" width="8">:</td>
           <td class="nobr" align="left"><?php echo applyFactor($goalb[$st-1][$i][$n],$goalfaktor);?></td>
 <?php
-            if (isLeagueVB() == TRUE) { // Volleyball
+            // Volleyball Patch Start
+            if (isLeagueVB() == TRUE) {
               $pplus="";
               $pminus="";
               $splus="";
@@ -294,6 +299,7 @@ if ($file != "") {
               }
               echo "    <td align=\"left\" nowrap=\"nowrap\">".$vbinfo."</td>\n";
             }
+            // Volleyball Patch End
           } else {
             if ($m==2) {
               echo "          <td class=\"lmoTurnierSieger nobr\" align='right'>";
@@ -404,7 +410,8 @@ if ($file != "") {
           <td class="nobr" align="center" width="8">:</td>
           <td class="nobr" align="left"><?php echo applyFactor($goalb[$st-1][$i][$n],$goalfaktor);?></td>
 <?php
-            if (isLeagueVB() == TRUE) { // Volleyball
+            // Volleyball Patch Start
+            if (isLeagueVB() == TRUE) {
               $pplus="";
               $pminus="";
               $splus="";
@@ -418,6 +425,7 @@ if ($file != "") {
               }
               echo "    <td align=\"left\" nowrap=\"nowrap\">".$vbinfo."</td>\n";
             }
+            // Volleyball Patch End
           } else {
             if ($m==2) {
               echo "          <td class=\"lmoTurnierSieger nobr\" align='right'>";

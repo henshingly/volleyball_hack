@@ -18,7 +18,7 @@
   */
 
 //take a look at the example ligue the hack is delivered with
-//Volleyball mode is switched on by naming liga like "Volleyball*"
+// Volleyball mode is switched on by naming liga like "Volleyball*"
 //No changes where made in the database, therefore
 //results must be entered in the lmo notes as follwos: "note xyz (25:10 ...), so please enter carefully :-)
 //NB: set points are calculated automatically and stored !! if not manually entered !!
@@ -76,7 +76,7 @@ if (strpos($titel, getVolleyballNameVB()) > -1)
 function setTabWidthVB(&$gesamtbreite) {
   global $vb_tab_mid, $vb_tab_max;
   if (isLeagueVB() == TRUE) {
-    $gesamtbreite += 2; //Volleyball
+    $gesamtbreite += 2; // Volleyball
     if ($vb_tab_mid == TRUE) {
       $vb_tab_max = FALSE;
     }

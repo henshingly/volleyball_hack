@@ -96,9 +96,11 @@ if (file_exists(PATH_TO_TEMPLATEDIR.'/'.basename($file).".tpl.php")) {
 
 //Titel
 if ($file!="") {
+  // Volleyball Patch Start
   $newtitel = $titel;
-  setOptionsVB ($newtitel); //Volleyball
+  setOptionsVB ($newtitel);
   $output_titel .= $newtitel;
+  // Volleyball Patch Start
 } else {
   $output_titel .= $action=="tipp"?$text['tipp'][0]:$text[53];
 }
@@ -313,7 +315,7 @@ $template->setVariable("Kalender", $output_kalender);
 $template->setVariable("Ergebnisse", $output_ergebnisse);
 $template->setVariable("Spielplan", $output_spielplan);
 $template->setVariable("Info", $output_info);
-$template->setVariable("Infolink", $p1." ".$vb_version ); //Volleyball Versionsnummer
+$template->setVariable("Infolink", $p1." ".$vb_version ); // Volleyball Versionsnummer
 $template->setVariable("Sprachauswahl", $output_sprachauswahl);
 $template->setVariable("Titel", $output_titel);
 $template->setVariable("Stylesheet", $output_stylesheet . $output_stylesheet2);

@@ -115,8 +115,9 @@ foreach($datsort as $key => $val) {
     <td align="right"><?php echo applyFactor($goalb[$st-1][$i],$goalfaktor); ?></td>
     <td align="center" width="8">:</td>
     <td align="left"><?php echo applyFactor($goala[$st-1][$i],$goalfaktor); ?></td><?php
+    // Volleyball Patch Start
     }
-    if (isLeagueVB() == TRUE) { //Volleyball
+    if (isLeagueVB() == TRUE) {
       $pplus = "";
       $pminus = "";
       $splus = "";
@@ -129,6 +130,7 @@ foreach($datsort as $key => $val) {
         $vbinfo = "&nbsp(" . $vbinfo . ")";
       }
       echo "<td align=\"left\" nowrap=\"nowrap\">" . $vbinfo . "</td>\n";
+    // Volleyball Patch End
     }?>
     <td width="2">&nbsp;</td>
     <td class="nobr" align="left"><?php

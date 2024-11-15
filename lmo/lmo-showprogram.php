@@ -93,6 +93,7 @@ if ($file!="") {
           <td align="center" style="width:8px;">:</td>
           <td align="left"><?php echo applyFactor($goalb[$j][$i],$goalfaktor); ?></td>
 <?php
+          // Volleyball Patch Start
           if (isLeagueVB() == TRUE) {
             getPointsFromCommentVB($mnote[$j][$i], $pointplus, $pointminus, $setplus, $setminus, $error);
 ?>
@@ -102,6 +103,7 @@ if ($file!="") {
           <td align="left"><?php echo $pointminus; ?></td>
 <?php
           }
+          // Volleyball Patch End
           if ($spez==1) {?>
           <td style="width:2px;">&nbsp;</td>
           <td align="left"><?php echo $mspez[$j][$i]; ?></td>

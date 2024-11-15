@@ -61,11 +61,13 @@ if ($file!="") {
     $platz0 = array("");
     $platz0 = array_pad($array, $anzteams+1, "");
     for ($x = 0; $x < $anzteams; $x++) {
+      // Volleyball Patch Start
       if (isLeagueVB() == TRUE) {
-        $platz0[getTeamNumber($tab0[$x])] = $x+1; //Volleyball
+        $platz0[getTeamNumber($tab0[$x])] = $x+1; 
       } else {
         $platz0[intval(substr($tab0[$x], 34))] = $x+1;
       }
+      // Volleyball Patch Start
     }?>
         <tr>
           <th class="text-right"><?php echo $teams[$show_stat1];?></th>
@@ -454,41 +456,41 @@ if ($ligaLoaded  and $show_stat1 > 0 and $show_stat1 <= $liga->teamCount()) {
             <table width="100%" cellpadding="3" cellspacing="0">
               <tr>
                 <th>&nbsp;</th>
-                <th colspan="2"><?php echo $text[4033]?></th>
-                <th colspan="2"><?php echo $text[4034]?></th>
+                <th style="text-align:center" colspan="2"><?php echo $text[4033]?></th>
+                <th style="text-align:center" colspan="2"><?php echo $text[4034]?></th>
               </tr>
               <tr>
-                <th><?php echo $text[4028]?></th>
+                <th style="text-align:right"><?php echo $text[4028]?>&nbsp;&nbsp;</th>
                 <td align="right" class="lmoTabelleMeister"><strong><?php echo $akt_gewonnen?></strong>&nbsp;</td>
-                <td class="lmoTabelleMeister"><?php echo nl2br($team_akt_gewonnen)?></td>
+                <td class="lmoTabelleMeister"><?php echo nl2br($team_akt_gewonnen)?>&nbsp;</td>
                 <td align="right" class="lmoTabelleMeister"><strong><?php echo $max_gewonnen?></strong>&nbsp;</td>
-                <td class="lmoTabelleMeister"><?php echo nl2br($team_max_gewonnen)?></td>
+                <td class="lmoTabelleMeister">&nbsp;<?php echo nl2br($team_max_gewonnen)?></td>
               </tr>
               <tr>
-                <th><?php echo $text[4029]?></th>
+                <th style="text-align:right"><?php echo $text[4029]?>&nbsp;&nbsp;</th>
                 <td align="right" class="lmoTabelleUefa"><strong><?php echo $akt_ungeschlagen?></strong>&nbsp;</td>
-                <td class="lmoTabelleUefa"><?php echo nl2br($team_akt_ungeschlagen)?></td>
+                <td class="lmoTabelleUefa"><?php echo nl2br($team_akt_ungeschlagen)?>&nbsp;</td>
                 <td align="right" class="lmoTabelleUefa"><strong><?php echo $max_ungeschlagen?></strong>&nbsp;</td>
-                <td class="lmoTabelleUefa"><?php echo nl2br($team_max_ungeschlagen)?></td>
+                <td class="lmoTabelleUefa">&nbsp;<?php echo nl2br($team_max_ungeschlagen)?></td>
               </tr>
               <tr>
-                <th><?php echo $text[200]?></th>
-                <td align="right"><strong><?php echo $akt_unentschieden?></strong>&nbsp;</td>
+                <th style="text-align:right"><?php echo $text[200]?>&nbsp;&nbsp;</th>
+                <td align="right"><strong><?php echo $akt_unentschieden?>&nbsp;</strong>&nbsp;</td>
                 <td><?php echo nl2br($team_akt_unentschieden)?></td>
                 <td align="right"><strong><?php echo $max_unentschieden?></strong>&nbsp;</td>
                 <td><?php echo nl2br($team_max_unentschieden)?></td>
               </tr>
               <tr>
-                <th><?php echo $text[4031]?></th>
+                <th style="text-align:right"><?php echo $text[4031]?>&nbsp;&nbsp;</th>
                 <td align="right" class="lmoTabelleRelegation"><strong><?php echo $akt_sieglos?></strong>&nbsp;</td>
-                <td class="lmoTabelleRelegation"><?php echo nl2br($team_akt_sieglos)?></td>
+                <td class="lmoTabelleRelegation"><?php echo nl2br($team_akt_sieglos)?>&nbsp;</td>
                 <td align="right" class="lmoTabelleRelegation"><strong><?php echo $max_sieglos?></strong>&nbsp;</td>
                 <td class="lmoTabelleRelegation"><?php echo nl2br($team_max_sieglos)?></td>
               </tr>
               <tr>
-                <th><?php echo $text[4032]?></th>
+                <th style="text-align:right"><?php echo $text[4032]?>&nbsp;&nbsp;</th>
                 <td align="right" class="lmoTabelleAbsteiger"><strong><?php echo $akt_verloren?></strong>&nbsp;</td>
-                <td class="lmoTabelleAbsteiger"><?php echo nl2br($team_akt_verloren)?></td>
+                <td class="lmoTabelleAbsteiger"><?php echo nl2br($team_akt_verloren)?>&nbsp;</td>
                 <td align="right" class="lmoTabelleAbsteiger"><strong><?php echo $max_verloren?></strong>&nbsp;</td>
                 <td class="lmoTabelleAbsteiger"><?php echo nl2br($team_max_verloren)?></td>
               </tr>

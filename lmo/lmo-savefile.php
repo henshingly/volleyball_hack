@@ -189,9 +189,11 @@ if (($_SESSION['lmouserok']==2)||($_SESSION['lmouserok']==1)) {
             fputs($datei,"TA".$j."=".$teama[$i-1][$j-1]."\n");
             fputs($datei,"TB".$j."=".$teamb[$i-1][$j-1]."\n");
             if ($lmtype==0) {
-              if (isLeagueVB() == TRUE) { // Volleyball
-                calcFileResultsVB($mnote[$i-1][$j-1], $goala[$i-1][$j-1], $goalb[$i-1][$j-1], $msieg[$i-1][$j-1]); // Volleyball
+              // Volleyball Patch Start
+              if (isLeagueVB() == TRUE) {
+                calcFileResultsVB($mnote[$i-1][$j-1], $goala[$i-1][$j-1], $goalb[$i-1][$j-1], $msieg[$i-1][$j-1]);
               }
+              // Volleyball Patch Start
               if ($goala[$i-1][$j-1]=="_") {
                 fputs($datei,"GA".$j."=-1\n");
               }
@@ -231,16 +233,20 @@ if (($_SESSION['lmouserok']==2)||($_SESSION['lmouserok']==1)) {
             }
             else {
               for ($n=1; $n<=$modus[$i-1]; $n++) {
+                // Volleyball Patch Start
                 if (isLeagueVB() == TRUE) { // Volleyball
-                  calcFileResultsVB($mnote[$i-1][$j-1][$n-1], $goala[$i-1][$j-1][$n-1], $goalb[$i-1][$j-1][$n-1], $mspez[$i-1][$j-1][$n-1]); // Volleyball
+                  calcFileResultsVB($mnote[$i-1][$j-1][$n-1], $goala[$i-1][$j-1][$n-1], $goalb[$i-1][$j-1][$n-1], $mspez[$i-1][$j-1][$n-1]);
                 }
+                // Volleyball Patch End
                 if ($goala[$i-1][$j-1][$n-1]==="_") { // Volleyball
+                //if ($goala[$i-1][$j-1][$n-1]=="_") {
                   fputs($datei,"GA".$j.$n."=-1\n");
                 }
                 else {
                   fputs($datei,"GA".$j.$n."=".$goala[$i-1][$j-1][$n-1]."\n");
                 }
                 if ($goalb[$i-1][$j-1][$n-1]==="_") { // Volleyball
+                //if ($goalb[$i-1][$j-1][$n-1]=="_") {
                   fputs($datei,"GB".$j.$n."=-1\n");
                 }
                 else {
