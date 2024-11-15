@@ -6,18 +6,14 @@
 
 # Volleyball Hack for the LMO
 
-This hack for the LMO enables a better view in the backend for volleyball leagues.
-
-You have 4 options to present your volleyball league to visitors of your LMO.
-
+With this LMO - Hack a better view in the backend for volleyball leagues is possible.  
+You have 4 options to present your volleyball league to visitors of your LMO.  
 Further description in the forum at https://www.vest-sport.de/forum/viewtopic.php?p=815#p815. Currently only in German
 
 --------------------------------------------------------------------------------------------------------
 
 # Volleyball Hack für den LMO
 
-Durch diesen Hack für den LMO ist eine bessere Ansicht im Backend für Volleyballligen möglich.
-
-Du hast 4 Möglichkeiten Deine Volleyball Liga für die Besucher Deines LMO's darzustellen.
-
+Mit diesem LMO - Hack ist eine bessere Ansicht im Backend für Volleyballligen möglich.  
+Du hast 4 Möglichkeiten Deine Volleyball Liga für die Besucher Deines LMO's darzustellen.  
 Nähere Beschreibung im Forum unter https://www.vest-sport.de/forum/viewtopic.php?p=815#p815. Momentan nur in deutsch
